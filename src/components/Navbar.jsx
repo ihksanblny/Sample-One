@@ -33,9 +33,9 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'Product', to: '/produk' },
+    { name: 'Catalog', to: '/katalog' },
     { name: 'About Us', to: '/tentang-kami' },
-    { name: 'Contact', to: '/kontak' },
-    { name: 'Catalog', to: '/katalog' }
+    { name: 'Contact', to: '/kontak' }
   ];
 
   return (

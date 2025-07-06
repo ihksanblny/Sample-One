@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, ShoppingBag, Search } from 'lucide-react';
 
 const Logo = () => (
@@ -34,8 +34,8 @@ export default function Navbar() {
     { name: 'Home', to: '/' },
     { name: 'Product', to: '/produk' },
     { name: 'Catalog', to: '/katalog' },
-    { name: 'About Us', to: '/tentang-kami' },
-    { name: 'Contact', to: '/kontak' }
+    { name: 'About Us', to: '/about' },
+    { name: 'Contact', to: '/contact' }
   ];
 
   return (
@@ -70,9 +70,9 @@ export default function Navbar() {
             <button onClick={toggleSearch} className="hidden md:block hover:text-red-400 transition-colors duration-300">
               <Search size={22} />
             </button>
-            <button className="hidden md:block hover:text-red-400 transition-colors duration-300">
+            <Link to="/keranjang" className="hidden md:block hover:text-red-400 transition-colors duration-300">
               <ShoppingBag size={22} />
-            </button>
+            </Link>
             <div className="md:hidden z-50" onClick={toggleMenu}>
               {isOpen ? <X size={28} className="text-red-400" /> : <Menu size={28} />}
             </div>

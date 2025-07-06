@@ -1,3 +1,71 @@
+/* ... import tailwind Anda ... */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  /* Efek Scanlines untuk background */
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      rgba(18, 18, 18, 0) 50%,
+      rgba(0, 0, 0, 0.25) 50%
+    );
+    background-size: 100% 4px;
+    z-index: 1;
+    pointer-events: none;
+    animation: scan 10s linear infinite;
+  }
+  @keyframes scan {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -200px; }
+  }
+
+  /* Animasi Glitch untuk teks */
+  .glitch {
+    animation: glitch 1s linear infinite;
+  }
+  @keyframes glitch {
+    2%,64% { transform: translate(2px,0) skew(0deg); }
+    4%,60% { transform: translate(-2px,0) skew(0deg); }
+    62% { transform: translate(0,0) skew(5deg); }
+  }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+  }
+  .glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    animation: glitch-top 1s linear infinite;
+  }
+  .glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00A9FF, 2px 2px red;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    animation: glitch-bottom 1.5s linear infinite;
+  }
+  @keyframes glitch-top {
+    2%,64% { transform: translate(2px,-2px); }
+    4%,60% { transform: translate(-2px,2px); }
+    62% { transform: translate(13px,-1px) skew(-13deg); }
+  }
+  @keyframes glitch-bottom {
+    2%,64% { transform: translate(-2px,0); }
+    4%,60% { transform: translate(-2px,0); }
+    62% { transform: translate(-22px,5px) skew(21deg); }
+  }
+}

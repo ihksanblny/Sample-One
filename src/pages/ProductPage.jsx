@@ -1,13 +1,11 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import products from '../data/product'; // Asumsikan ini adalah data produk Anda
 
 export default function ProductPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar />
+      
       
       {/* Kita gunakan padding yang sangat besar (pt-32, pb-24) 
         untuk menciptakan 'negative space' yang luas, memberi kesan mewah dan fokus.
@@ -31,7 +29,7 @@ export default function ProductPage() {
 
       </main>
       
-      <Footer />
+      
     </div>
   );
 }

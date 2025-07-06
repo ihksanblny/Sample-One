@@ -1,14 +1,12 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
-import Footer from '../components/Footer';
 import products from '../data/product'; // Pastikan Anda memiliki data produk
 import { ArrowRight } from 'lucide-react';
 
 export default function Homepage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar />
+      
 
       <main>
         {/* ===== Hero Section ===== */}
@@ -87,7 +85,7 @@ export default function Homepage() {
 
       </main>
 
-      <Footer />
+      
     </div>
   );
 }

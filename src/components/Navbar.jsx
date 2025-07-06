@@ -82,7 +82,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-black transition-transform duration-500 ease-in-out ${
+        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-black transition-transform duration-500 ease-in-out z-50 ${
           isOpen ? 'transform-none' : '-translate-x-full'
         }`}
       >

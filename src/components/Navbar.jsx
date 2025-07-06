@@ -109,10 +109,14 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-8">
-            <button className="flex items-center gap-2 border border-red-400/50 px-4 py-2 rounded-md hover:bg-red-400/10 transition-colors duration-300">
+            <Link 
+              to="/keranjang" 
+              onClick={toggleMenu} 
+              className="flex items-center gap-2 border border-red-400/50 px-4 py-2 rounded-md hover:bg-red-400/10 transition-colors duration-300"
+            >
               <ShoppingBag size={22} />
               <span>Keranjang</span>
-            </button>
+            </Link>
           </li>
         </ul>
       </div>
